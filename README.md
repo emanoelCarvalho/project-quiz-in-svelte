@@ -1,47 +1,23 @@
-# Svelte + Vite
+Quiz em Svelte JS
+Este é um projeto de um quiz desenvolvido em Svelte JS. O quiz foi criado para testar os conhecimentos sobre o universo da Marvel, apresentando perguntas relacionadas aos personagens, filmes e histórias em quadrinhos.
 
-This template should help get you started developing with Svelte in Vite.
+Funcionalidades
+O quiz possui um conjunto de perguntas sobre a Marvel.
+Cada pergunta é apresentada uma de cada vez, permitindo ao usuário selecionar a resposta correta.
+O usuário pode avançar para a próxima pergunta após selecionar a resposta.
+Ao final do quiz, é exibido o resultado com o número de respostas corretas.
+O usuário tem a opção de reiniciar o quiz para jogar novamente.
+Tecnologias utilizadas
+Svelte JS: Um framework JavaScript que permite a construção de interfaces de usuário reativas e eficientes.
+HTML: A estrutura básica do quiz é criada usando a linguagem de marcação HTML.
+CSS: Estilos personalizados são aplicados ao quiz para melhorar a experiência visual.
+Como executar o projeto
+Clone o repositório em sua máquina local.
+Navegue até o diretório do projeto.
+Instale as dependências do projeto executando o comando npm install.
+Execute o comando npm run dev para iniciar o servidor de desenvolvimento.
+Acesse o quiz em seu navegador através do endereço http://localhost:5000.
+Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) para relatar erros, sugerir melhorias ou enviar solicitações de pull request.
 
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
-
-## Need an official Svelte framework?
-
-Check out [SvelteKit](https://github.com/sveltejs/kit#readme), which is also powered by Vite. Deploy anywhere with its serverless-first approach and adapt to various platforms, with out of the box support for TypeScript, SCSS, and Less, and easily-added support for mdsvex, GraphQL, PostCSS, Tailwind CSS, and more.
-
-## Technical considerations
-
-**Why use this over SvelteKit?**
-
-- It brings its own routing solution which might not be preferable for some users.
-- It is first and foremost a framework that just happens to use Vite under the hood, not a Vite app.
-
-This template contains as little as possible to get started with Vite + Svelte, while taking into account the developer experience with regards to HMR and intellisense. It demonstrates capabilities on par with the other `create-vite` templates and is a good starting point for beginners dipping their toes into a Vite + Svelte project.
-
-Should you later need the extended capabilities and extensibility provided by SvelteKit, the template has been structured similarly to SvelteKit so that it is easy to migrate.
-
-**Why `global.d.ts` instead of `compilerOptions.types` inside `jsconfig.json` or `tsconfig.json`?**
-
-Setting `compilerOptions.types` shuts out all other types not explicitly listed in the configuration. Using triple-slash references keeps the default TypeScript setting of accepting type information from the entire workspace, while also adding `svelte` and `vite/client` type information.
-
-**Why include `.vscode/extensions.json`?**
-
-Other templates indirectly recommend extensions via the README, but this file allows VS Code to prompt the user to install the recommended extension upon opening the project.
-
-**Why enable `checkJs` in the JS template?**
-
-It is likely that most cases of changing variable types in runtime are likely to be accidental, rather than deliberate. This provides advanced typechecking out of the box. Should you like to take advantage of the dynamically-typed nature of JavaScript, it is trivial to change the configuration.
-
-**Why is HMR not preserving my local component state?**
-
-HMR state preservation comes with a number of gotchas! It has been disabled by default in both `svelte-hmr` and `@sveltejs/vite-plugin-svelte` due to its often surprising behavior. You can read the details [here](https://github.com/sveltejs/svelte-hmr/tree/master/packages/svelte-hmr#preservation-of-local-state).
-
-If you have state that's important to retain within a component, consider creating an external store which would not be replaced by HMR.
-
-```js
-// store.js
-// An extremely simple external store
-import { writable } from 'svelte/store'
-export default writable(0)
-```
+Esperamos que você se divirta respondendo ao quiz e aprimorando seus conhecimentos sobre a Marvel!
