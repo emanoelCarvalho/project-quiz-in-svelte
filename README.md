@@ -20,7 +20,7 @@ Clone o repositório em sua máquina local.
 Navegue até o diretório do projeto.
 Instale as dependências do projeto executando o comando npm install.
 Execute o comando npm run dev para iniciar o servidor de desenvolvimento.
-Acesse o quiz em seu navegador através do endereço http://localhost:5173.
+Acesse o quiz em seu navegador através do endereço http://localhost:3000.
 Contribuição
 Contribuições são bem-vindas! Sinta-se à vontade para abrir problemas (issues) para relatar erros, sugerir melhorias ou enviar solicitações de pull request.
 
