@@ -1,39 +1,45 @@
 <script>
-    import { estado, trocaDeEstado } from "./estado";
-    import Levels from "./Levels.svelte";
-    import Game1 from "./Game1.svelte";
-
-    let level1Passed = false;
-    let level2Passed = false;
-    let level3Passed = false;
+    import { estado, trocaDeEstado } from './estado.js';
+    import Game1 from './Game1.svelte';
 </script>
+
+<main>
+    <h1 class="title">Sejam bem-vindos à tela de jogar</h1>
+    <h2 class="subtitle">Escolha o nível que deseja jogar</h2>
+
+    <p class="description">Vale lembrar que para poder jogar o nível seguinte, precisa passar pelo nível anterior.</p>
+
+    <button class="level-button" on:click={() => trocaDeEstado("game1")}>Nível 1</button>
+</main>
+
 <style>
-    /* Estilos CSS compartilhados por todos os níveis */
-    .level-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        background-color: #f1f1f1;
+    main {
+        overflow: hidden;
     }
 
-    .level-title {
-        font-size: 24px;
+    .title {
+        font-size: 36px;
         font-weight: bold;
         margin-bottom: 20px;
+        font-family: "Anton", sans-serif;
+        color: #fe0404;
     }
 
-    .level-description {
+    .subtitle {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .description {
         font-size: 16px;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .level-button {
         padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 18px;
         background-color: #fe0404;
         color: #fff;
         border: none;
@@ -43,33 +49,7 @@
     }
 
     .level-button:hover {
-        background-color: #c40000;
+        background-color: #fff;
+        color: #fe0404;
     }
 </style>
-
-<main>
-    {#if !level1Passed}
-    <div class="level-container">
-        <h1 class="level-title">Nível 1</h1>
-        <p class="level-description">Complete o Nível 1 para desbloquear o próximo.</p>
-        <button class="level-button" on:click={() => trocaDeEstado("game1")}>Passar para o Próximo Nível</button>
-    </div>
-    {:else if !level2Passed}
-    <div class="level-container">
-        <h1 class="level-title">Nível 2</h1>
-        <p class="level-description">Complete o Nível 2 para desbloquear o próximo.</p>
-        <button class="level-button" on:click={() => level2Passed = true}>Passar para o Próximo Nível</button>
-    </div>
-    {:else if !level3Passed}
-    <div class="level-container">
-        <h1 class="level-title">Nível 3</h1>
-        <p class="level-description">Complete o Nível 3 para concluir o jogo.</p>
-        <button class="level-button" on:click={() => level3Passed = true}>Concluir o Jogo</button>
-    </div>
-    {:else}
-    <div class="level-container">
-        <h1 class="level-title">Parabéns!</h1>
-        <p class="level-description">Você concluiu todos os níveis.</p>
-    </div>
-    {/if}
-</main>
