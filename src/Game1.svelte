@@ -48,6 +48,7 @@
     let perguntaAtual = 0;
     let acertos = 0;
     let erros = 0;
+    let jogoFinalizado = false;
 
     function responder(event) {
         let resposta = event.target.innerText;
@@ -75,6 +76,14 @@
         perguntaAtual = 0;
         acertos = 0;
         erros = 0;
+
+        trocaDeEstado("menu");
+
+        jogoFinalizado = true;
+
+        setTimeout(() => {
+            jogoFinalizado = false;
+        }, 1000);
     }
 
     function winnerGame() {
@@ -113,33 +122,45 @@
 
 <main>
     <div>
-        <h1>Quiz</h1>
+        <h1>Quiz Marvel</h1>
         <h2>Acertos: {acertos}</h2>
         <h2>Erros: {erros}</h2>
         {#if perguntaAtual < perguntas.length}
             <h3>{perguntas[perguntaAtual].pergunta}</h3>
             {#each perguntas[perguntaAtual].alternativas as alternativa}
-                <button id="btn-resposta" on:click={responder}
-                    >{alternativa}</button
-                >
+                <button class="btn-resposta" on:click={responder}>
+                    {alternativa}
+                </button>
             {/each}
         {:else}
             <h3>Fim de jogo</h3>
-            <button on:click={reiniciar}>Reiniciar</button>
+            <!-- <button class="btn-reiniciar" on:click={reiniciar}>Reiniciar</button
+            > -->
         {/if}<br />
         {#if perguntaAtual < perguntas.length}
-            <button id="jump" on:click={pularPergunta}>Pular</button>
+            <button class="jump" on:click={pularPergunta}>Pular</button>
         {/if}
     </div>
 </main>
 
 <style>
+    @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+    :global(body) {
+        background-color: #000;
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
     main {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 90vh;
     }
+
     div {
         display: flex;
         flex-direction: column;
@@ -148,54 +169,84 @@
         width: 500px;
         height: 500px;
     }
-    button {
-        width: 200px;
-        height: 50px;
-        border-radius: 10px;
-        border: none;
-        font-size: 20px;
-        font-family: "Marvel", sans-serif;
-        cursor: pointer;
-    }
+
     h1 {
         text-align: center;
-        color: red;
+        color: #fe0404;
         font-size: 50px;
-        font-family: "Marvel", sans-serif;
+        font-family: "Anton", sans-serif;
+        margin-bottom: 0;
     }
+
     h2 {
         text-align: center;
-        color: black;
+        color: #fff;
         font-size: 30px;
-        font-family: "Marvel", sans-serif;
+        font-family: "Anton", sans-serif;
+        margin: 10px 0;
     }
+
     h3 {
         text-align: center;
-        color: black;
+        color: #fff;
         font-size: 30px;
-        font-family: "Marvel", sans-serif;
+        font-family: "Anton", sans-serif;
+        margin: 10px 0;
     }
-    #jump {
+
+    .jump {
         margin-top: 20px;
-        border: 1px solid black;
+        border: 1px solid #fff;
         border-radius: 10px;
         font-size: 20px;
-        font-family: "Marvel", sans-serif;
+        font-family: "Anton", sans-serif;
+        background-color: transparent;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
     }
-    button {
-        background-color: #f44336;
-        color: white;
+
+    .jump:hover {
+        background-color: #fe0404;
+        color: #fff;
     }
-    button:hover {
-        background-color: white;
-        color: #f44336;
-    }
-    #btn-resposta {
+
+    .btn-resposta {
         margin-top: 10px;
-        border: 1px solid black;
+        border: 1px solid #fe0404;
         border-radius: 10px;
         font-size: 20px;
-        font-family: "Marvel", sans-serif;
+        font-family: "Anton", sans-serif;
         display: block;
+        background-color: #fe0404;
+        color: #fff;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
     }
+
+    .btn-resposta:hover {
+        background-color: #fff;
+        color: #fe0404;
+    }
+/* 
+    .btn-reiniciar {
+        margin-top: 20px;
+        border: 1px solid #fe0404;
+        border-radius: 10px;
+        font-size: 20px;
+        font-family: "Anton", sans-serif;
+        display: block;
+        background-color: transparent;
+        color: #fe0404;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-reiniciar:hover {
+        background-color: #fe0404;
+        color: #fff;
+    } */
 </style>

@@ -4,10 +4,10 @@
 
 <main>
     <div id="container">
-        <h1 id="title-quiz">Quiz Marvel</h1>
+        <h1 id="title-quiz"><strong style=" color: #fff;">Quiz</strong> <strong style="color: red;">Marvel</strong></h1>
 
         <div id="menu">
-            <button id="btn-jogar" on:click={() => trocaDeEstado("jogar")}
+            <button id="btn-jogar" on:click={() => trocaDeEstado("levels")}
                 >Jogar</button
             >
             <button id="btn-sobre" on:click={() => trocaDeEstado("sobre")}
@@ -27,7 +27,7 @@
     }
     #title-quiz {
         text-align: center;
-        color: red;
+        color: #000;
         font-size: 50px;
         font-family: "Marvel", sans-serif;
     }
