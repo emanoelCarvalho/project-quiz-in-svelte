@@ -1,6 +1,5 @@
 <script>
     import { estado, trocaDeEstado } from './estado.js';
-    import Game1 from './Game1.svelte';
 </script>
 
 <main>

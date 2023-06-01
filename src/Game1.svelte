@@ -72,20 +72,6 @@
         perguntaAtual++;
     }
 
-    function reiniciar() {
-        perguntaAtual = 0;
-        acertos = 0;
-        erros = 0;
-
-        trocaDeEstado("menu");
-
-        jogoFinalizado = true;
-
-        setTimeout(() => {
-            jogoFinalizado = false;
-        }, 1000);
-    }
-
     function winnerGame() {
         if (acertos <= 4 && erros < acertos) {
             setTimeout(() => {
@@ -142,7 +128,6 @@
         {/if}
     </div>
 </main>
-
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
@@ -230,23 +215,4 @@
         background-color: #fff;
         color: #fe0404;
     }
-/* 
-    .btn-reiniciar {
-        margin-top: 20px;
-        border: 1px solid #fe0404;
-        border-radius: 10px;
-        font-size: 20px;
-        font-family: "Anton", sans-serif;
-        display: block;
-        background-color: transparent;
-        color: #fe0404;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .btn-reiniciar:hover {
-        background-color: #fe0404;
-        color: #fff;
-    } */
 </style>

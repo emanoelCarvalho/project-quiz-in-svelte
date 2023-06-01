@@ -8,13 +8,12 @@
 
 <main>
   {#if $estado == "menu"}
-  <Menu />
+    <Menu />
   {:else if $estado == "levels"}
-  <Levels />
+    <Levels />
   {:else if $estado == "game1"}
-  <Game1 />
+    <Game1 />
   {:else if $estado == "sobre"}
-  <Sobre />
+    <Sobre />
   {/if}
-  
 </main>
