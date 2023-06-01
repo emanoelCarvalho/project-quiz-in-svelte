@@ -3,6 +3,7 @@
   import Menu from "./Menu.svelte";
   import Levels from "./Levels.svelte";
   import Game1 from "./Game1.svelte";
+  import Game2 from "./Game2.svelte";
   import Sobre from "./Sobre.svelte";
 </script>
 
@@ -13,6 +14,8 @@
     <Levels />
   {:else if $estado == "game1"}
     <Game1 />
+  {:else if $estado == "game2"}
+    <Game2 />
   {:else if $estado == "sobre"}
     <Sobre />
   {/if}

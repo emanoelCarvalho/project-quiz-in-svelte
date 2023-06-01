@@ -1,6 +1,8 @@
 <script>
-    //@ts-nocheck
+   // @ts-nocheck
+
     import { trocaDeEstado } from "./estado";
+    import passedLevelOne from "./Levels.svelte";
 
     let perguntas = [
         {
@@ -78,7 +80,8 @@
                 alert("Você ganhou!");
             }, 2000);
             setTimeout(() => {
-                trocaDeEstado("menu");
+                passedLevelOne = (true);
+                trocaDeEstado("levels");
             }, 3000);
         }
     }

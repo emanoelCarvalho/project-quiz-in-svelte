@@ -1,14 +1,35 @@
 <script>
-    import { estado, trocaDeEstado } from './estado.js';
+    import { estado, trocaDeEstado } from "./estado.js";
+    import {writable} from "svelte/store";
+
+    export const passedLevelOne = writable(false);
+    export const passedLevelTwo = writable(false);
+
+    // if(passedLevelOne) {
+    //     trocaDeEstado("game2");
+    // }
+
 </script>
 
 <main>
     <h1 class="title">Sejam bem-vindos à tela de jogar</h1>
     <h2 class="subtitle">Escolha o nível que deseja jogar</h2>
 
-    <p class="description">Vale lembrar que para poder jogar o nível seguinte, precisa passar pelo nível anterior.</p>
+    <p class="description">
+        Vale lembrar que para poder jogar o nível seguinte, precisa passar pelo
+        nível anterior.
+    </p>
 
-    <button class="level-button" on:click={() => trocaDeEstado("game1")}>Nível 1</button>
+    <button class="level-button" on:click={() => trocaDeEstado("game1")}
+        >Nível 1</button
+    >
+
+    <button class="level-button" on:click={() => trocaDeEstado("game2")}
+        >Nível 2</button
+    >
+
+
+    
 </main>
 
 <style>
