@@ -1,8 +1,9 @@
 <script>
-   // @ts-nocheck
+    // @ts-nocheck
 
     import { trocaDeEstado } from "./estado";
-    import passedLevelOne from "./Levels.svelte";
+    // import {passedLevelOne} from "./Levels.svelte";
+
 
     let perguntas = [
         {
@@ -80,7 +81,8 @@
                 alert("Você ganhou!");
             }, 2000);
             setTimeout(() => {
-                passedLevelOne = (true);
+                
+                passedLevelOne = true;
                 trocaDeEstado("levels");
             }, 3000);
         }
@@ -131,6 +133,7 @@
         {/if}
     </div>
 </main>
+
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");

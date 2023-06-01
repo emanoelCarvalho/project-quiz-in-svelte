@@ -1,14 +1,5 @@
 <script>
     import { estado, trocaDeEstado } from "./estado.js";
-    import {writable} from "svelte/store";
-
-    export const passedLevelOne = writable(false);
-    export const passedLevelTwo = writable(false);
-
-    // if(passedLevelOne) {
-    //     trocaDeEstado("game2");
-    // }
-
 </script>
 
 <main>
