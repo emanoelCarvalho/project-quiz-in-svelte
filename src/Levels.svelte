@@ -1,5 +1,10 @@
 <script>
     import { estado, trocaDeEstado } from "./estado.js";
+
+    function proximoNivel() {
+        trocaDeEstado("game2");
+    }
+
 </script>
 
 <main>
