@@ -1,70 +1,89 @@
 <script>
     import { estado, trocaDeEstado } from "./estado.js";
 
-    function proximoNivel() {
+    let nivelConcluido = false;
+
+    function concluirNivel1() {
+        nivelConcluido = true;
         trocaDeEstado("game2");
     }
-
 </script>
 
 <main>
-    <h1 class="title">Sejam bem-vindos à tela de jogar</h1>
-    <h2 class="subtitle">Escolha o nível que deseja jogar</h2>
+    <div class="container">
+        <h1>Sejam bem-vindos à tela de jogar</h1>
+        <h2>Escolha o nível que deseja jogar</h2>
+        <p>
+            Vale lembrar que para poder jogar o próximo nível, precisa passar
+            pelo nível anterior
+        </p>
 
-    <p class="description">
-        Vale lembrar que para poder jogar o nível seguinte, precisa passar pelo
-        nível anterior.
-    </p>
+        <button class="btn-nivel" on:click={() => trocaDeEstado("game1")}
+            >Nível 1</button
+        >
 
-    <button class="level-button" on:click={() => trocaDeEstado("game1")}
-        >Nível 1</button
-    >
-
-    <button class="level-button" on:click={() => trocaDeEstado("game2")}
-        >Nível 2</button
-    >
-
-
-    
+        <button class="btn-nivel" on:click={() => trocaDeEstado("game2")}
+            >Nível 2</button
+        >
+    </div>
 </main>
 
 <style>
-    main {
+    @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+    :global(body) {
+        background-color: #000;
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
         overflow: hidden;
     }
 
-    .title {
-        font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        font-family: "Anton", sans-serif;
-        color: #fe0404;
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
     }
 
-    .subtitle {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-
-    .description {
-        font-size: 16px;
+    .container {
         text-align: center;
-        margin-bottom: 40px;
     }
 
-    .level-button {
-        padding: 10px 20px;
+    h1 {
+        color: #fe0404;
+        font-size: 40px;
+        font-family: "Anton", sans-serif;
         margin-bottom: 10px;
-        font-size: 18px;
+    }
+
+    h2 {
+        color: #fff;
+        font-size: 30px;
+        font-family: "Anton", sans-serif;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .btn-nivel {
         background-color: #fe0404;
         color: #fff;
+        font-size: 24px;
+        font-family: "Anton", sans-serif;
+        padding: 10px 20px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
 
-    .level-button:hover {
+    .btn-nivel:hover {
         background-color: #fff;
         color: #fe0404;
     }

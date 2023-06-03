@@ -1,9 +1,8 @@
 <script>
     // @ts-nocheck
 
-    import { trocaDeEstado } from "./estado";
-
-
+    import { trocaDeEstado, estado } from "./estado";
+    
     let perguntas = [
         {
             pergunta: "Qual o nome do ator que interpreta o Homem de Ferro?",
@@ -50,7 +49,17 @@
     let perguntaAtual = 0;
     let acertos = 0;
     let erros = 0;
-    let jogoFinalizado = false;
+
+    function embaralharAlternativas() {
+        let alternativas = perguntas[perguntaAtual].alternativas;
+        let alternativasEmbaralhadas = [];
+        while (alternativas.length > 0) {
+            let indiceAleatorio = Math.floor(Math.random() * alternativas.length);
+            alternativasEmbaralhadas.push(alternativas[indiceAleatorio]);
+            alternativas.splice(indiceAleatorio, 1);
+        }
+        return alternativasEmbaralhadas;
+    }
 
     function responder(event) {
         let resposta = event.target.innerText;
@@ -91,7 +100,7 @@
                 alert("Você empatou!");
             }, 2000);
             setTimeout(() => {
-                trocaDeEstado("menu");
+                trocaDeEstado("levels");
             }, 3000);
         }
     }
@@ -115,7 +124,7 @@
         <h2>Erros: {erros}</h2>
         {#if perguntaAtual < perguntas.length}
             <h3>{perguntas[perguntaAtual].pergunta}</h3>
-            {#each perguntas[perguntaAtual].alternativas as alternativa}
+            {#each embaralharAlternativas() as alternativa}
                 <button class="btn-resposta" on:click={responder}>
                     {alternativa}
                 </button>

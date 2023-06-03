@@ -5,6 +5,7 @@
   import Game1 from "./Game1.svelte";
   import Game2 from "./Game2.svelte";
   import Sobre from "./Sobre.svelte";
+  import WinnerQuiz from "./WinnerQuiz.svelte";
 </script>
 
 <main>
@@ -16,6 +17,8 @@
     <Game1 />
   {:else if $estado == "game2"}
     <Game2 />
+  {:else if $estado == "winnerQuiz"}
+    <WinnerQuiz />
   {:else if $estado == "sobre"}
     <Sobre />
   {/if}

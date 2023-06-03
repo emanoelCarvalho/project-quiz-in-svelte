@@ -5,3 +5,4 @@ export let estado = writable('menu');
 export const trocaDeEstado = (novoEstado) => {
     estado.set(novoEstado);
 }
+
