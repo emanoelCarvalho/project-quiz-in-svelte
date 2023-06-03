@@ -87,9 +87,10 @@
         if (acertos <= 4 && erros < acertos) {
             setTimeout(() => {
                 alert("Você ganhou!");
+                alert("Avance para o próximo nível!");
             }, 2000);
             setTimeout(() => {
-                trocaDeEstado("levels");
+                trocaDeEstado("game2");
             }, 3000);
         }
     }

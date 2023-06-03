@@ -1,12 +1,11 @@
 <script>
+    // @ts-nocheck
+
     import { estado, trocaDeEstado } from "./estado.js";
 
-    let nivelConcluido = false;
-
-    function concluirNivel1() {
-        nivelConcluido = true;
-        trocaDeEstado("game2");
-    }
+    const precisaConcluirLevel = () => {
+        alert("Você precisa concluir o nível 1 para jogar o nível 2");
+    };
 </script>
 
 <main>
@@ -22,7 +21,7 @@
             >Nível 1</button
         >
 
-        <button class="btn-nivel" on:click={() => trocaDeEstado("game2")}
+        <button class="btn-nivel" on:click={() => precisaConcluirLevel()}
             >Nível 2</button
         >
     </div>
