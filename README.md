@@ -1,4 +1,3 @@
-Claro! Segue abaixo uma sugestão de atualização para o README do seu projeto Quiz in Svelte:
 
 # Quiz in Svelte
 
