@@ -37,7 +37,7 @@ npm install
 npm run dev
 ```
 
-5. Acesse o quiz no seu navegador em `http://localhost:5000`.
+5. Acesse o quiz no seu navegador em `http://localhost:3000`.
 
 ## Contribuição
 
