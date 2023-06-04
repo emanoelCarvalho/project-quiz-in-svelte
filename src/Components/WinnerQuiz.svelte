@@ -1,5 +1,5 @@
 <script>
-    import { estado, trocaDeEstado } from "./estado.js";
+    import { estado, trocaDeEstado } from "../stores/estado.js";
 </script>
 
 <main>

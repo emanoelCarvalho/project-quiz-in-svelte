@@ -1,7 +1,5 @@
 <script>
-    // @ts-nocheck
-
-    import { estado, trocaDeEstado } from "./estado.js";
+    import { estado, trocaDeEstado } from "../stores/estado.js";
 
     const precisaConcluirLevel = () => {
         alert("Você precisa concluir o nível 1 para jogar o nível 2");

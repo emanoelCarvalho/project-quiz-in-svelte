@@ -1,5 +1,5 @@
 <script>
-    import { trocaDeEstado, estado } from "./estado.js";
+    import { trocaDeEstado } from "../stores/estado.js";
 
     let perguntasLevelTow = [
         {

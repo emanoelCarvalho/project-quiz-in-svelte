@@ -1,10 +1,13 @@
 <script>
-    import { trocaDeEstado } from "./estado";
+    import { trocaDeEstado } from "../stores/estado.js";
 </script>
 
 <main>
     <div id="container">
-        <h1 id="title-quiz"><strong style=" color: #fff;">Quiz</strong> <strong style="color: red;">Marvel</strong></h1>
+        <h1 id="title-quiz">
+            <strong style=" color: #fff;">Quiz</strong>
+            <strong style="color: red;">Marvel</strong>
+        </h1>
 
         <div id="menu">
             <button id="btn-jogar" on:click={() => trocaDeEstado("levels")}
@@ -18,7 +21,6 @@
 </main>
 
 <style>
-
     main {
         display: flex;
         justify-content: center;
@@ -45,7 +47,7 @@
         color: white;
     }
     #btn-jogar:hover {
-        background-color: #32CD32;
+        background-color: #32cd32;
     }
     #btn-sobre {
         background-color: #191970;

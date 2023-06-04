@@ -1,6 +1,5 @@
-<!-- Sobre.svelte -->
 <script>
-    import { trocaDeEstado } from "./estado";
+    import { trocaDeEstado } from "../stores/estado.js";
 </script>
 
 <main>
@@ -31,20 +30,20 @@
     <p>Divirta-se e boa sorte!</p>
 
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div on:click={() => trocaDeEstado('menu')} id="voltar">Voltar ao menu</div>
+    <div on:click={() => trocaDeEstado("menu")} id="voltar">Voltar ao menu</div>
 </main>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    
+    @import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
     :global(body) {
         background-color: #000;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         margin: 0;
         padding: 0;
     }
-    
+
     main {
         display: block;
         margin-top: 20px;
@@ -57,7 +56,7 @@
     }
 
     h1 {
-        font-family: 'Anton', sans-serif;
+        font-family: "Anton", sans-serif;
         font-size: 2.5rem;
         margin-bottom: 1rem;
         color: #fe0404;
@@ -78,7 +77,7 @@
     ul {
         margin-bottom: 1rem;
     }
-    
+
     #voltar {
         cursor: pointer;
         font-size: 1rem;
@@ -87,7 +86,7 @@
         color: #fe0404;
         text-decoration: underline;
     }
-    
+
     #voltar:hover {
         color: #fff;
     }

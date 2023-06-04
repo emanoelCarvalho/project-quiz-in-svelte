@@ -1,11 +1,11 @@
 <script>
-  import { estado } from "./estado";
-  import Menu from "./Menu.svelte";
-  import Levels from "./Levels.svelte";
-  import Game1 from "./Game1.svelte";
-  import Game2 from "./Game2.svelte";
-  import Sobre from "./Sobre.svelte";
-  import WinnerQuiz from "./WinnerQuiz.svelte";
+  import { estado } from "./stores/estado";
+  import Menu from "./Components/Menu.svelte";
+  import Levels from "./Components/Levels.svelte";
+  import Game1 from "./Components/Game1.svelte";
+  import Game2 from "./Components/Game2.svelte";
+  import Sobre from "./Components/Sobre.svelte";
+  import WinnerQuiz from "./Components/WinnerQuiz.svelte";
 </script>
 
 <main>

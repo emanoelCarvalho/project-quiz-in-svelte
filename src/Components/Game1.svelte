@@ -1,5 +1,5 @@
 <script>
-    import { trocaDeEstado, estado } from "./estado";
+    import { trocaDeEstado } from "../stores/estado.js";
 
     let perguntas = [
         {
@@ -144,8 +144,6 @@
             {/each}
         {:else}
             <h3>Fim de jogo</h3>
-            <!-- <button class="btn-reiniciar" on:click={reiniciar}>Reiniciar</button
-            > -->
         {/if}<br />
         {#if perguntaAtual < perguntas.length}
             <button class="jump" on:click={pularPergunta}>Pular</button>
