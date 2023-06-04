@@ -5,7 +5,7 @@
 <main>
     <h1 class="parabens">Parabéns, você ganhou!</h1>
 
-    <h2>Esperamos que tenha gostado do Quiz</h2>
+    <h2>Esperamos que tenham gostado do Quiz</h2>
 
     <p>Aguardem novos desafios</p>
 

@@ -1,11 +1,10 @@
 <script>
-    // @ts-nocheck
-
     import { trocaDeEstado, estado } from "./estado.js";
 
     let perguntasLevelTow = [
         {
-            pergunta: "Qual é o nome da equipe de super-heróis formada por Homem de Ferro, Capitão América, Thor, Hulk, Viúva Negra e Gavião Arqueiro?",
+            pergunta:
+                "Qual é o nome da equipe de super-heróis formada por Homem de Ferro, Capitão América, Thor, Hulk, Viúva Negra e Gavião Arqueiro?",
             alternativas: [
                 "Vingadores",
                 "Quarteto Fantástico",
@@ -13,10 +12,11 @@
                 "Thunderbolts ",
             ],
             resposta: "Vingadores",
-        }, 
+        },
 
         {
-            pergunta: "Quem é o Arqui-inimigo do Homem-Aranha?", 
+            pergunta:
+                "Quem é o 1° inimigo do Homem-Aranha do Tobey Maguire?    ",
             alternativas: [
                 "Duende Verde",
                 "Doutor Octopus",
@@ -24,45 +24,42 @@
                 "Carnificina",
             ],
             resposta: "Duende Verde",
-        }, 
-            
-            {
-                pergunta: "Qual é o nome do planeta natal do Scar?", 
-                alternativas: [
-                    "Terra",
-                    "Titã",
-                    "Vormir",
-                    "Sakaar",
-                ],
-                resposta: "Sakaar",
-            }, 
-    
-            {
-                pergunta: "Qual é o nome do pai  do Senhor das Estrelas?", 
-                alternativas: [
-                    "Tony Stark",
-                    "Ego",
-                    "Drax",
-                    "Nick Fury",
-                ],
-                resposta: "Ego",
-            }, 
-    
-            {
-                pergunta: "Qual é o nome do planeta natal do Thanos?", 
-                alternativas: [
-                    "Terra",
-                    "Titã",
-                    "Vormir",
-                    "Sakaar",
-                ],
-                resposta: "Titã",
-            },  
-    ]
+        },
+
+        {
+            pergunta: "Qual é o nome do planeta natal do Scar?",
+            alternativas: ["Terra", "Titã", "Vormir", "Sakaar"],
+            resposta: "Sakaar",
+        },
+
+        {
+            pergunta: "Qual é o nome do pai  do Senhor das Estrelas?",
+            alternativas: ["Tony Stark", "Ego", "Drax", "Nick Fury"],
+            resposta: "Ego",
+        },
+
+        {
+            pergunta: "Qual é o nome do planeta natal do Thanos?",
+            alternativas: ["Terra", "Titã", "Vormir", "Sakaar"],
+            resposta: "Titã",
+        },
+    ];
 
     let perguntaAtual = 0;
     let acertos = 0;
     let erros = 0;
+
+    function embaralharPerguntas() {
+        let perguntasEmbaralhadas = [];
+        while (perguntasLevelTow.length > 0) {
+            let indiceAleatorio = Math.floor(
+                Math.random() * perguntasLevelTow.length
+            );
+            perguntasEmbaralhadas.push(perguntasLevelTow[indiceAleatorio]);
+            perguntasLevelTow.splice(indiceAleatorio, 1);
+        }
+        perguntasLevelTow = perguntasEmbaralhadas;
+    }
 
     function responder(event) {
         let resposta = event.target.innerText;
@@ -75,9 +72,15 @@
 
         if (perguntaAtual >= perguntasLevelTow.length && acertos > erros) {
             winnerGame();
-        } else if (perguntaAtual >= perguntasLevelTow.length && acertos == erros) {
+        } else if (
+            perguntaAtual >= perguntasLevelTow.length &&
+            acertos == erros
+        ) {
             empatouGame();
-        } else if (perguntaAtual >= perguntasLevelTow.length && erros >= acertos) {
+        } else if (
+            perguntaAtual >= perguntasLevelTow.length &&
+            erros >= acertos
+        ) {
             loserGame();
         }
     }
@@ -85,6 +88,8 @@
     function pularPergunta() {
         perguntaAtual++;
     }
+
+    embaralharPerguntas();
 
     function winnerGame() {
         if (acertos <= 5 && erros < acertos) {

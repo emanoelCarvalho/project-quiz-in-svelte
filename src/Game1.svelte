@@ -1,8 +1,6 @@
 <script>
-    // @ts-nocheck
-
     import { trocaDeEstado, estado } from "./estado";
-    
+
     let perguntas = [
         {
             pergunta: "Qual o nome do ator que interpreta o Homem de Ferro?",
@@ -54,11 +52,23 @@
         let alternativas = perguntas[perguntaAtual].alternativas;
         let alternativasEmbaralhadas = [];
         while (alternativas.length > 0) {
-            let indiceAleatorio = Math.floor(Math.random() * alternativas.length);
+            let indiceAleatorio = Math.floor(
+                Math.random() * alternativas.length
+            );
             alternativasEmbaralhadas.push(alternativas[indiceAleatorio]);
             alternativas.splice(indiceAleatorio, 1);
         }
         return alternativasEmbaralhadas;
+    }
+
+    function embaralharPerguntas() {
+        let perguntasEmbaralhadas = [];
+        while (perguntas.length > 0) {
+            let indiceAleatorio = Math.floor(Math.random() * perguntas.length);
+            perguntasEmbaralhadas.push(perguntas[indiceAleatorio]);
+            perguntas.splice(indiceAleatorio, 1);
+        }
+        perguntas = perguntasEmbaralhadas;
     }
 
     function responder(event) {
@@ -82,6 +92,8 @@
     function pularPergunta() {
         perguntaAtual++;
     }
+
+    embaralharPerguntas();
 
     function winnerGame() {
         if (acertos <= 4 && erros < acertos) {
