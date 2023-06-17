@@ -1,14 +1,19 @@
 <script>
+    import swal from "sweetalert";
     import { estado, trocaDeEstado } from "../stores/estado.js";
 
     const precisaConcluirLevel = () => {
-        alert("Você precisa concluir o nível 1 para jogar o nível 2");
+        swal({
+            title: "Atenção!",
+            text: "Você precisa concluir o nível 1 para poder jogar o nível 2",
+            icon: "warning",
+        })
     };
 </script>
 
 <main>
     <div class="container">
-        <h1>Sejam bem-vindos à tela de jogar</h1>
+        <h1>Sejam bem-vindos à tela de níveis</h1>
         <h2>Escolha o nível que deseja jogar</h2>
         <p>
             Vale lembrar que para poder jogar o próximo nível, precisa passar

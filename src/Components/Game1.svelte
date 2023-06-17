@@ -1,4 +1,5 @@
 <script>
+    import swal from "sweetalert";
     import { trocaDeEstado } from "../stores/estado.js";
 
     let perguntas = [
@@ -91,6 +92,14 @@
 
     function pularPergunta() {
         perguntaAtual++;
+
+        if (perguntaAtual >= perguntas.length && acertos > erros) {
+            winnerGame();
+        } else if (perguntaAtual >= perguntas.length && acertos == erros) {
+            empatouGame();
+        } else if (perguntaAtual >= perguntas.length && erros >= acertos) {
+            loserGame();
+        }
     }
 
     embaralharPerguntas();
@@ -98,22 +107,42 @@
     function winnerGame() {
         if (acertos <= 4 && erros < acertos) {
             setTimeout(() => {
-                alert("Você ganhou!");
-                alert("Avance para o próximo nível!");
+                swal({
+                    title: "Você ganhou!",
+                    text:
+                        "Você acertou " +
+                        acertos +
+                        " perguntas!" +
+                        "\n" +
+                        "Avançando para o próximo jogo...",
+                    icon: "success",
+                });
             }, 2000);
             setTimeout(() => {
                 trocaDeEstado("game2");
-            }, 3000);
+            }, 4000);
         }
     }
 
     function empatouGame() {
         if (acertos == erros) {
             setTimeout(() => {
-                alert("Você empatou!");
-            }, 2000);
+                swal({
+                    title: "Empatou!",
+                    text:
+                        "Você acertou "  +
+                        acertos +
+                        " e errou " +
+                        erros +
+                        " perguntas!" +
+                        "\n" +
+                        "Retornando para a tela de níveis...",
+                    icon: "warning",
+                });
+            }, 1000);
             setTimeout(() => {
                 trocaDeEstado("levels");
+                console.log(trocaDeEstado);
             }, 3000);
         }
     }
@@ -121,8 +150,17 @@
     function loserGame() {
         if (erros >= acertos) {
             setTimeout(() => {
-                alert("Você perdeu!");
-            }, 2000);
+                swal({
+                    title: "Você perdeu!",
+                    text:
+                        "Você errou " +
+                        erros +
+                        " perguntas!" +
+                        "\n" +
+                        "Retornando para o menu...",
+                    icon: "error",
+                });
+            }, 1000);
             setTimeout(() => {
                 trocaDeEstado("menu");
             }, 3000);
