@@ -1,6 +1,7 @@
 <script>
     import swal from "sweetalert";
     import { trocaDeEstado } from "../stores/estado.js";
+    import name from "./Levels.svelte"
 
     let perguntas = [
         {
@@ -110,7 +111,7 @@
                 swal({
                     title: "Você ganhou!",
                     text:
-                        "Você acertou " +
+                        "Parabéns" +  "você acertou, " +
                         acertos +
                         " perguntas!" +
                         "\n" +

@@ -7,7 +7,7 @@
             title: "Atenção!",
             text: "Você precisa concluir o nível 1 para poder jogar o nível 2",
             icon: "warning",
-        })
+        });
     };
 </script>
 
